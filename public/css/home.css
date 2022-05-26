@@ -1,0 +1,24 @@
+/* Imports */
+
+@import "../css/global.css";
+
+@import "../css/addons/navigation.css";
+
+/* Global */
+
+html, body {
+    height: 100%;
+  }
+  
+.main-container {
+    width: 100%;
+    height: 100%;
+}
+
+.content-container-center {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+}

@@ -1,0 +1,35 @@
+/* Global variables */
+
+:root {
+ --content-Colour: white;
+ --text-Colour: black;
+ --text-Font: Arial, sans-serif;
+}
+
+/* Global html */
+
+body {
+    background: var(--content-Colour);
+    font-family: var(--text-Font);
+    color: var(--text-Colour);
+
+    margin: 0;
+}
+
+input {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 7px;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+button {
+    border-radius: 5px;
+    text-align: center;
+    padding: 7px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-style: solid;
+}

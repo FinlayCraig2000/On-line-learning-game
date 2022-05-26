@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="/js/darkToggle.js" defer></script>
+    <link rel="stylesheet" href="/css/settings.css">
+    <title>Settings</title>
+</head>
+<body>
+    <nav>
+        <h4>Final Year Project</h4>
+        <ul>
+            <li><a href = "/Profile">Profile</a></li>
+            <li><a href = "/Messages">Messages</a></li>
+            <li><a href = "/Settings">Settings</a></li>
+            <li><a href = "/auth/Logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-container">
+        <div class="content-user-infomation">
+            <div class="information-padding">
+                <b>User Information</b>
+            </div>
+            
+            <div class="information-padding">
+                Email: {{user.email}}
+            </div>
+
+            <div class="information-padding">
+                Username: {{user.username}}
+            </div>
+        </div>
+        <div class="content-darkmode-switch">
+            <div class="darkmode-switch-container">
+                <div>
+                    Darkmode
+                </div>
+                <label class="darkmode-switch-label">
+                    <input type="checkbox">
+                    <span class="slider round" onclick="darkmode()"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

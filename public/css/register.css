@@ -1,0 +1,33 @@
+@import "../css/global.css";
+
+@import "../css/addons/navigation.css";
+
+html, body {
+  height: 100%;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+}
+
+.content-container-center {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+}
+
+.card-body .form-group {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

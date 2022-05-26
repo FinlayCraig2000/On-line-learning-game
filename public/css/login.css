@@ -1,0 +1,49 @@
+@import "../css/global.css";
+
+@import "../css/addons/navigation.css";
+@import "../css/addons/switch.css";
+
+html, body {
+  height: 100%;
+}
+
+.main-container {
+  width: 100%;
+  height: 100%;
+}
+
+.content-container-center {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+}
+
+.content-container-text {
+  display: flex;
+}
+
+.login-row {
+  display: flex;
+  justify-content: center;
+}
+
+.login-button {
+  display: flex;
+  justify-content: center;
+}
+
+.login-button .content-container-button {
+  background: gray;
+  width: 50%;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.login-button .content-container-button:hover {
+  background: darkgray;
+  width: 50%;
+  cursor: pointer;
+  margin-left: 5px;
+}

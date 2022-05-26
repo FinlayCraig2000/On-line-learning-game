@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/darkToggle.js" defer></script>
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Home page</title>
+</head>
+<body>
+    <div class="main-container">
+        <nav class="nav-container">
+            <h4>Final Year Project</h4>
+            <ul>
+                <li><a href = "/">Home</a></li>
+                {{#if user}}
+                    <li><a href = "/Profile">Profile</a></li>
+                    <li><a href = "/auth/logout">Logout</a></li>
+                {{else}}
+                    <li><a href = "/login">Login</a></li>
+                    <li><a href = "/register">Register</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+
+        <div class="content-container-center">
+
+            <h1>Welcome to my Final Year Project</h1>
+            <p>This project is about On-line learning game for students in primary school</p>
+            <p>The project is created by Finlay Craig - N0806748</p>
+
+        </div>
+    </div>
+</body>
+</html>

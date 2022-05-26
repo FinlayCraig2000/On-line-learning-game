@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="/js/darkToggle.js" defer></script>
+    <script type="text/javascript" src="/js/jsonRead.js"></script>
+    <link rel="stylesheet" href="/css/messages.css">
+    <title>Messages</title>
+</head>
+<body>
+    <nav>
+        <h4>Final Year Project</h4>
+        <ul>
+            <li><a href = "/Profile">Profile</a></li>
+            <li><a href = "/Messages">Messages</a></li>
+            <li><a href = "/Settings">Settings</a></li>
+            <li><a href = "/auth/Logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class = "content-container">
+        <div class="content-container-align">
+            <div class="content-username">
+                Messages - {{user.username}}
+            </div>
+            <div class="content-messge-container">
+                <div class="messages-content-container">
+                    <div id="json-content-container"></div>
+
+                    <input type = "hidden" id = "thingIWant" value="{{{user.id}}}">
+
+                    
+                </div>
+
+                <div class="content-message-select">
+                    <select id="myselect" onchange="readJsonResults(this.value, true)">
+                        <option value="">Choose an option:</option>
+                        <option value="2">Admin</option>
+                        <option value="30">Student</option>
+                        <option value="31">Teacher</option>
+                        <option value="80">User</option>
+                        <option value="84">test</option>
+                    </select>
+
+                    <div id="json-content-container"></div>
+                    <div id="jsonQuestions-content-container"></div>
+                </div>
+
+                <div class="content-user-input">
+                    <form name="locationID" id="locationID" action="/api/user-logs/" method="POST">
+                        <div class="input-align">
+                            <label for="message">Message</label>
+                            <input type="text" id="message" placeholder="Message" name="message" class="message-input-row" required>
+                        </div>
+
+                        <div class="button-align">
+                            <button type="submit" class="message-button-upload">Upload</button>
+                        </div>
+                    </form>
+                </div>
+
+                <input type="hidden" id="myselect" value="{{{user.id}}}">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

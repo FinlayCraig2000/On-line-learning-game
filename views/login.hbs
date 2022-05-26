@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/darkToggle.js" defer></script>
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="main-container">
+        <nav class="nav-container">
+            <h4>Final Year Project</h4>
+            <ul>
+                <li><a href = "/">Home</a></li>
+                <li><a href = "/login">Login</a></li>
+                <li><a href = "/register">Register</a></li>
+            </ul>
+        </nav>
+
+        <div class="content-container-center">
+            <div class="content-container-text">
+                Login into account
+            </div>
+            <div class="content-container-form">
+                <form class="content-form" action="/auth/login" method="POST">
+                    <div class="login-row">
+                        <label for="email"></label>
+                        <input type="text" id="email" placeholder="Email" name="email" class="email-input-row">
+                    </div>
+
+                    <div class="login-row">
+                        <label for="password"></label>
+                        <input type="password" id="password" placeholder="Password" name="password" class="password-input-row">
+                    </div>
+                    
+                    <div class="login-button">
+                        <button type="submit" class="content-container-button">Login</button>
+                    </div>
+                </form>
+            </div>
+            
+            {{#if message}}
+                <h4 class="alert-message">{{message}}</h4>
+            {{/if}}
+
+        </div>
+    </div>
+</body>
+</html>

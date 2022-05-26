@@ -1,0 +1,58 @@
+@import "../css/global.css";
+
+@import "../css/addons/navigation.css";
+
+.graph-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.selection-align-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.content-subject {
+    margin-right: 15px;
+}
+
+.form-group-questions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.padding-table {
+    padding-top: 14px;
+    padding-bottom: 13px;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.content-align-selection {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.submit-button-align {
+    display: flex;
+    justify-content: center;
+}
+
+.content-json-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.content-group-table {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}

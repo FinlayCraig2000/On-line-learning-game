@@ -1,0 +1,22 @@
+@import "../css/global.css";
+
+@import "../css/addons/navigation.css";
+@import "../css/addons/switch.css";
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-user-infomation {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.information-padding {
+    padding-bottom: 10px;
+}

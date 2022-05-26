@@ -1,0 +1,41 @@
+@import "../css/global.css";
+
+@import "../css/addons/navigation.css";
+@import "../css/addons/switch.css";
+
+.content-container-align {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100%;
+    margin-top: 15px;
+}
+
+.content-message-select {
+    display: flex;
+    justify-content: center;
+}
+
+.content-user-input {
+    margin-top: 10px;
+}
+
+.messages-content-container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.message-input-row {
+    margin-left: 5px;
+}
+
+.input-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-align {
+    display: flex;
+    justify-content: center;
+}

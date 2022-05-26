@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="/js/darkToggle.js" defer></script>
+    <script type="text/javascript" src="/js/jsonRead.js"></script>
+    <link rel="stylesheet" href="/css/profile.css">
+    <title>Profile</title>
+</head>
+<body>
+    <nav>
+        <h4>Final Year Project</h4>
+        <ul>
+            <li><a href = "/Profile">Profile</a></li>
+            <li><a href = "/Messages">Messages</a></li>
+            <li><a href = "/Settings">Settings</a></li>
+            <li><a href = "/auth/Logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class = "content-container">
+        <div class="content-align-container">
+
+            {{#if teacherStatus}}
+
+                <div class="teacher-results-container">
+                    <div class="selection-align-container">
+                        <div class="content-subject">
+                            <select id="userIDSubject" onchange="readJsonResultsQuestions(this.value)">
+                                <option value="">Choose an option:</option>
+                                <option value="math">Math</option>
+                                <option value="english">English</option>
+                            </select>
+                        </div>
+
+                        <div class="content-userID">
+                            <select id="userIDresults" onchange="readJsonResults(this.value, false)">
+                                <option value="">Choose an option:</option>
+                                <option value="2">Admin</option>
+                                <option value="30">Student</option>
+                                <option value="31">Teacher</option>
+                                <option value="80">User</option>
+                                <option value="84">test</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="content-json-container">
+                        <div id="json-questions-content-container"></div>
+                        <div id="json-content-container"></div>
+                    </div>
+                </div>
+
+                <div class="graph-container">
+                    <canvas id="myChart" width="400" height="400"></canvas>
+
+                    <script>
+                        var buttonSelect = document.getElementById("userIDresults");
+
+                        buttonSelect.addEventListener("change", function() {
+                            var ctx = document.getElementById('myChart').getContext('2d');
+                            var myChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: ['Correct', 'Wrong'],
+                                    datasets: [{
+                                        label: 'Student Results',
+                                        data: [4, 0, 0],
+                                        backgroundColor: [
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 99, 132, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 99, 132, 1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    responsive: false,
+                                    plugins: {
+                                        datalabels: {
+                                        display: false
+                                        }
+                                    },
+                                }
+                            });
+                        })
+                    </script>
+                </div>
+
+                <div class="new-question-container">
+                    <div class="selection-align-container">
+                        <select id="userIDSubject" onchange="changeAction(this.value)">
+                            <option value="">Choose an option:</option>
+                            <option value="math">Math</option>
+                            <option value="english">English</option>
+                        </select>
+                    </div>
+
+                    <form name="locationID" id="locationID" action="/api/questions/" method="POST">
+                        <div class="form-group-questions">
+                            <label for="message">Questions</label>
+                            <input type="text" id="message1" placeholder="Question 1" name="message" class="message-input-row" required>
+                            <input type="text" id="message2" placeholder="Question 2" name="message" class="message-input-row" required>
+                            <input type="text" id="message3" placeholder="Question 3" name="message" class="message-input-row" required>
+                            <input type="text" id="message4" placeholder="Question 4" name="message" class="message-input-row" required>
+                        </div>
+
+                        <div class="submit-button-align">
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </div>
+                    </form>
+                </div>
+
+            {{/if}}
+
+            {{#if studentStatus}}
+
+                <div class="content-align-container">
+                    <div class="content-align-selection">
+                        <select id="userIDQuestions" onchange="readJsonResultsQuestions(this.value)">
+                            <option value="">Choose an option:</option>
+                            <option value="math">Math</option>
+                            <option value="english">English</option>
+                        </select>
+                    </div>
+
+                    <div class="content-json-container">
+
+                        <form name="locationID" id="locationID" action="/api/user-results/{{user.id}}-user-data.json" method="POST">
+                            <div class="content-group-table">
+                                <div id="json-questions-content-container"></div>
+                                
+                                <table border="1">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <input type="text" id="message1" placeholder="Message" name="message" class="message-input-row" required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" id="message2" placeholder="Message" name="message" class="message-input-row" required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" id="message3" placeholder="Message" name="message" class="message-input-row" required>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <input type="text" id="message4" placeholder="Message" name="message" class="message-input-row" required>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="submit-button-align">
+                                <button type="submit" class="btn btn-primary">Upload</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <input type = "hidden" id = "thingIWant" value="{{{user.id}}}">
+
+                <script>
+                    console.log(document.getElementById('thingIWant').value);
+                </script>
+            {{/if}}
+
+        </div>
+    </div>
+</body>
+</html>
